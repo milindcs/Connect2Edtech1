@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaInstagram, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import { contactApi } from '../utils/api';
 import './Contact.css';
 
@@ -65,7 +65,7 @@ export default function Contact() {
       href: 'https://www.instagram.com/the_c2f_?igsh=ZzU5OTRkYjl4ZHJj',
     },
     {
-      icon: FaLinkedin,
+      icon: FaLinkedinIn,
       label: 'LinkedIn',
       value: 'Connect2EdTech',
       href: 'https://www.linkedin.com/company/connect2edtech/',

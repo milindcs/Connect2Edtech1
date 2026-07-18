@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaLinkedin, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import { FaInstagram, FaLinkedinIn, FaWhatsapp, FaArrowUp } from 'react-icons/fa';
 import './Footer.css';
 
 export default function Footer() {
@@ -47,7 +47,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="social-link"
               >
-                <FaLinkedin />
+                <FaLinkedinIn />
               </a>
               <a
                 href="https://wa.me/917019436720"
