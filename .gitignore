@@ -50,3 +50,16 @@ coverage/
 
 # Vite
 vite.config.ts.timestamp-*
+
+# Root-level stray files
+package-lock.json
+connect2future.css
+override_reviews.css
+query
+*.webp
+*.avif
+*.jpeg
+*.jpg
+*.png
+*.html
+INSTALLATION.md
