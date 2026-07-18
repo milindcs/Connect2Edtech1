@@ -17,3 +17,14 @@ services:
         value: 10000
     healthCheckPath: /health
     autoDeploy: true
+
+  - type: static
+    name: connect2future-frontend
+    runtime: static
+    plan: free
+    rootDir: frontend
+    buildCommand: npm ci --legacy-peer-deps && npm run build
+    publishDir: frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://connect2future-backend.onrender.com
