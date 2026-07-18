@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
 import { coursesApi } from '../utils/api';
@@ -245,12 +246,12 @@ export default function Courses() {
                     <div className="course-footer">
                       <span className="course-price">₹{course.price}</span>
                       <div className="course-actions">
-                        <a href={`/courses/${course.key}`} className="btn btn-outline">
+                        <Link to={`/courses/${course.key}`} className="btn btn-outline">
                           View Details
-                        </a>
-                        <a href={`/enroll?course=${course.key}`} className="btn btn-primary">
+                        </Link>
+                        <Link to={`/enroll?course=${course.key}`} className="btn btn-primary">
                           Enroll
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
