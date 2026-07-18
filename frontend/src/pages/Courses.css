@@ -170,16 +170,19 @@
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--primary);
+  white-space: nowrap;
 }
 
 .course-actions {
   display: flex;
   gap: 8px;
+  flex-wrap: nowrap;
 }
 
 .course-actions .btn {
   padding: 8px 16px;
   font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .loading {
