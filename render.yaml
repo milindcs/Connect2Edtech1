@@ -1,11 +1,12 @@
 services:
+  # Backend
   - type: web
-    name: connect2future-backend
+    name: connect2edtech-api
     runtime: node
-    plan: free
     rootDir: backend
     buildCommand: npm install
-    startCommand: node server.js
+    startCommand: npm start
+    plan: free
     envVars:
       - key: NODE_ENV
         value: production
@@ -13,17 +14,23 @@ services:
         sync: false
       - key: CORS_ORIGINS
         sync: false
-      - key: PORT
-        value: 10000
-    healthCheckPath: /health
-    autoDeploy: true
+      - key: CONTACT_EMAIL
+        sync: false
+      - key: CONTACT_PHONE
+        sync: false
+      - key: WHATSAPP_PHONE
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
 
-  - type: static
-    name: connect2future-frontend
-    plan: free
+  # Frontend
+  - type: web
+    name: connect2edtech-frontend
+    runtime: static
     rootDir: frontend
-    buildCommand: npm install --legacy-peer-deps && npm run build
-    publishDir: frontend/dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://connect2future-backend.onrender.com
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
