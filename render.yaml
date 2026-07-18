@@ -20,7 +20,6 @@ services:
 
   - type: static
     name: connect2future-frontend
-    runtime: static
     plan: free
     rootDir: frontend
     buildCommand: npm ci --legacy-peer-deps && npm run build
