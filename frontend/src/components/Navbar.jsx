@@ -51,6 +51,8 @@ export default function Navbar() {
           </Link>
         </div>
 
+        {isOpen && <div className="navbar-overlay navbar-overlay-open" onClick={() => setIsOpen(false)} />}
+
         <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
