@@ -42,7 +42,7 @@ export default function Footer() {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.linkedin.com/company/connect2edtech/"
+                href="https://www.linkedin.com/company/connect2future/?originalSubdomain=in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"

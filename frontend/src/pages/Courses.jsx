@@ -152,9 +152,7 @@ export default function Courses() {
   const filterCourses = () => {
     let filtered = courses;
 
-    if (activeTab === 'technical') {
-      filtered = courses.filter((course) => course.category === 'technical');
-    } else if (activeTab === 'nontechnical') {
+    if (activeTab === 'nontechnical') {
       filtered = courses.filter((course) => course.category === 'nontechnical');
     }
 
@@ -171,7 +169,6 @@ export default function Courses() {
 
   const tabs = [
     { id: 'all', label: 'All Courses' },
-    { id: 'technical', label: 'Technical' },
     { id: 'nontechnical', label: 'Non Technical' },
   ];
 
@@ -246,7 +243,7 @@ export default function Courses() {
                     <div className="course-footer">
                       <span className="course-price">₹{course.price}</span>
                       <div className="course-actions">
-                        <Link to={`/courses/${course.key}`} className="btn btn-outline">
+                        <Link to={`/courses/${course.key}`} className="btn btn-primary">
                           View Details
                         </Link>
                         <Link to={`/enroll?course=${course.key}`} className="btn btn-primary">

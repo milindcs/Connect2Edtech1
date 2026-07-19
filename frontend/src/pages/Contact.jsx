@@ -68,7 +68,7 @@ export default function Contact() {
       icon: FaLinkedinIn,
       label: 'LinkedIn',
       value: 'Connect2EdTech',
-      href: 'https://www.linkedin.com/company/connect2edtech/',
+      href: 'https://www.linkedin.com/company/connect2future/?originalSubdomain=in',
     },
   ];
 
