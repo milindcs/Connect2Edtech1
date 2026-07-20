@@ -91,39 +91,39 @@ select {
 .container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 14px;
+    padding: 0 12px;
   }
 }
 
 .main-content {
-  padding-top: 90px;
+  padding-top: 80px;
 }
 
 @media (max-width: 768px) {
   .main-content {
-    padding-top: 80px;
+    padding-top: 70px;
   }
 }
 
 .section {
-  padding: 60px 0;
+  padding: 48px 0;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .section-title {
   font-size: 2.25rem;
   font-weight: 800;
   color: var(--secondary);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .section-subtitle {
@@ -134,7 +134,7 @@ select {
 }
 
 @media (max-width: 420px) {
-  .section { padding: 40px 0; }
+  .section { padding: 32px 0; }
   .section-title { font-size: 1.5rem; }
   .section-subtitle { font-size: 0.875rem; }
 }
@@ -144,9 +144,9 @@ select {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: var(--radius);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   transition: all 0.2s ease;
 }
@@ -187,26 +187,26 @@ select {
 }
 
 .btn-lg {
-  padding: 14px 28px;
-  font-size: 1.0625rem;
+  padding: 12px 24px;
+  font-size: 1rem;
 }
 
 @media (max-width: 1024px) {
   .section-title { font-size: 2rem; }
   .section-subtitle { font-size: 1rem; }
-  .btn-lg { padding: 12px 24px; font-size: 1rem; }
+  .btn-lg { padding: 10px 20px; font-size: 0.9375rem; }
 }
 
 @media (max-width: 768px) {
-  .section { padding: 48px 0; }
+  .section { padding: 40px 0; }
   .section-title { font-size: 1.75rem; }
   .section-subtitle { font-size: 0.9375rem; }
-  .btn { padding: 9px 18px; font-size: 0.875rem; }
-  .btn-lg { padding: 12px 24px; font-size: 0.9375rem; }
+  .btn { padding: 8px 16px; font-size: 0.875rem; }
+  .btn-lg { padding: 10px 20px; font-size: 0.9375rem; }
 }
 
 @media (max-width: 420px) {
-  .section { padding: 40px 0; }
+  .section { padding: 32px 0; }
   .section-title { font-size: 1.5rem; }
   .section-subtitle { font-size: 0.875rem; }
 }

@@ -119,9 +119,9 @@
 
 /* Stats Section */
 .stats-section {
-  padding: 40px 0;
+  padding: 28px 0;
   background: #fce7f3;
-  margin-top: -40px;
+  margin-top: -28px;
   position: relative;
   z-index: 2;
 }
@@ -129,7 +129,7 @@
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 10px;
 }
 
 @media (max-width: 1024px) {
@@ -148,34 +148,34 @@
 .stat-card {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 24px 20px;
+  padding: 18px 14px;
   text-align: center;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border);
 }
 
 .stat-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 12px;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 8px;
   background: var(--primary-light);
   color: var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 
 .stat-value {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--secondary);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .stat-label {
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
 }
 
@@ -187,8 +187,8 @@
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
 @media (max-width: 1024px) {
@@ -219,7 +219,7 @@
 
 .course-image {
   position: relative;
-  height: 200px;
+  height: 160px;
   overflow: hidden;
 }
 
@@ -236,9 +236,9 @@
 
 .course-badge {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  padding: 6px 12px;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
   background: var(--primary);
   color: white;
   border-radius: 6px;
@@ -248,35 +248,35 @@
 }
 
 .course-content {
-  padding: 20px;
+  padding: 14px;
 }
 
 .course-title {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--secondary);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .course-subtitle {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   line-height: 1.5;
 }
 
 .course-meta {
   display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 6px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
 .course-meta span {
-  padding: 4px 10px;
+  padding: 3px 8px;
   background: var(--background);
   border-radius: 6px;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
 }
 
@@ -284,12 +284,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 12px;
+  padding-top: 8px;
   border-top: 1px solid var(--border);
 }
 
 .course-price {
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
   font-weight: 800;
   color: var(--primary);
 }
@@ -301,13 +301,13 @@
 /* Why Choose Us */
 .why-choose-us {
   background: #fce7f3;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .why-choose-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 12px;
 }
 
 @media (max-width: 1024px) {
@@ -326,22 +326,22 @@
 .why-choose-card {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 20px;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
 }
 
 .why-choose-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary);
 }
 
 .why-choose-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
   font-weight: 700;
   color: var(--secondary);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .why-choose-card p {
@@ -359,7 +359,7 @@
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 14px;
 }
 
 @media (max-width: 1024px) {
@@ -371,34 +371,34 @@
 @media (max-width: 420px) {
   .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 }
 
 .testimonial-card {
   background: var(--background);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 18px;
   border: 1px solid var(--border);
 }
 
 .testimonial-content {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: var(--text);
   line-height: 1.7;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   font-style: italic;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .testimonial-avatar {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   background: var(--primary);
   color: white;
   border-radius: 50%;
@@ -406,23 +406,23 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .testimonial-name {
   font-weight: 600;
   color: var(--secondary);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .testimonial-role {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--text-secondary);
 }
 
 /* CTA Section */
 .cta-section {
-  padding: 60px 0;
+  padding: 40px 0;
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
   color: white;
 }
@@ -496,21 +496,21 @@
 
   .stats-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .stat-card {
-    padding: 24px 16px;
+    padding: 18px 14px;
   }
 
   .courses-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .testimonials-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .cta-card h2 {
