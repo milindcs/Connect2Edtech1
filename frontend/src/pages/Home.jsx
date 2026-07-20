@@ -6,10 +6,10 @@ import { coursesApi } from '../utils/api';
 import './Home.css';
 
 const stats = [
-  { icon: FaUsers, label: 'Students Trained', value: '5000+' },
-  { icon: FaBook, label: 'Courses', value: '15+' },
-  { icon: FaBriefcase, label: 'Placements', value: '3000+' },
-  { icon: FaBuilding, label: 'Industry Partners', value: '100+' },
+  { icon: FaUsers, label: 'Students Trained', value: 5000, suffix: '+' },
+  { icon: FaBook, label: 'Courses', value: 15, suffix: '+' },
+  { icon: FaBriefcase, label: 'Placements', value: 3000, suffix: '+' },
+  { icon: FaBuilding, label: 'Industry Partners', value: 100, suffix: '+' },
 ];
 
 const fallbackCourses = [
@@ -179,12 +179,10 @@ export default function Home() {
   useEffect(() => {
     if (!countsStarted) return;
 
-    const targets = {
-      'Students Trained': 5000,
-      'Courses': 15,
-      'Placements': 3000,
-      'Industry Partners': 100,
-    };
+    const targets = stats.reduce((acc, stat) => {
+      acc[stat.label] = stat.value;
+      return acc;
+    }, {});
 
     const duration = 2000;
     const steps = 60;
@@ -194,12 +192,11 @@ export default function Home() {
     const timer = setInterval(() => {
       step++;
       const progress = step / steps;
-      setCounts({
-        'Students Trained': Math.floor(5000 * progress),
-        'Courses': Math.floor(15 * progress),
-        'Placements': Math.floor(3000 * progress),
-        'Industry Partners': Math.floor(100 * progress),
-      });
+      const nextCounts = stats.reduce((acc, stat) => {
+        acc[stat.label] = Math.floor(stat.value * progress);
+        return acc;
+      }, {});
+      setCounts(nextCounts);
 
       if (step >= steps) {
         clearInterval(timer);
@@ -288,7 +285,7 @@ export default function Home() {
                   <stat.icon />
                 </div>
                 <div className="stat-value">
-                  {counts[stat.label] !== undefined ? counts[stat.label].toLocaleString() + '+' : '0+'}
+                  {counts[stat.label] !== undefined ? counts[stat.label].toLocaleString() + stat.suffix : '0' + stat.suffix}
                 </div>
                 <div className="stat-label">{stat.label}</div>
               </motion.div>
