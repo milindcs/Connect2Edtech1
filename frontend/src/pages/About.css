@@ -1,6 +1,6 @@
 .about-hero {
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-  padding: 100px 0 60px;
+  padding: 50px 0 30px;
   color: white;
   text-align: center;
 }
@@ -180,7 +180,7 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    padding: 100px 0 60px;
+    padding: 60px 0 30px;
   }
 
   .about-hero-title {

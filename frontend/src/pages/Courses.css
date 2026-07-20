@@ -4,7 +4,7 @@
 
 .courses-hero {
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-  padding: 120px 0 60px;
+  padding: 60px 0 30px;
   color: white;
   text-align: center;
 }
@@ -216,7 +216,7 @@
 }
 
 @media (max-width: 420px) {
-  .courses-hero { padding: 92px 0 34px; }
+  .courses-hero { padding: 50px 0 24px; }
   .courses-hero-title { font-size: 1.95rem; }
   .courses-hero-subtitle { font-size: 0.95rem; }
   .courses-search { margin-bottom: 20px; }
@@ -225,7 +225,7 @@
 
 @media (max-width: 768px) {
   .courses-hero {
-    padding: 100px 0 40px;
+    padding: 60px 0 30px;
   }
 
   .courses-hero-title {

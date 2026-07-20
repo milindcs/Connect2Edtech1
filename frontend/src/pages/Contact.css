@@ -4,7 +4,7 @@
 
 .contact-hero {
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-  padding: 100px 0 50px;
+  padding: 50px 0 30px;
   color: white;
   text-align: center;
 }
@@ -133,7 +133,7 @@
 }
 
 @media (max-width: 420px) {
-  .contact-hero { padding: 92px 0 36px; }
+  .contact-hero { padding: 50px 0 24px; }
   .contact-title { font-size: 1.95rem; }
   .contact-subtitle { font-size: 0.95rem; }
   .contact-form-card { padding: 16px; }
@@ -141,7 +141,7 @@
 
 @media (max-width: 768px) {
   .contact-hero {
-    padding: 100px 0 40px;
+    padding: 60px 0 30px;
   }
 
   .contact-title {

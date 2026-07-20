@@ -11,7 +11,7 @@
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
   overflow: hidden;
   color: white;
-  padding: 100px 0 80px;
+  padding: 50px 0 30px;
 }
 
 .hero-bg {
@@ -413,17 +413,17 @@
 }
 
 @media (max-width: 420px) {
-  .hero-content { padding-top: 50px; }
+  .hero-content { padding-top: 40px; }
   .hero-title { font-size: 2.1rem; }
   .hero-subtitle { font-size: 0.95rem; margin-bottom: 20px; }
-  .hero { padding: 100px 0 60px; }
-  .stats-section { margin-top: -50px; }
+  .hero { padding: 50px 0 30px; }
+  .stats-section { margin-top: -30px; }
 }
 
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 110px 0 70px;
+    padding: 60px 0 40px;
   }
 
   .hero-title {
