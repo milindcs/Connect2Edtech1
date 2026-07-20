@@ -180,16 +180,12 @@ export default function Courses() {
       {/* Hero */}
       <section className="courses-hero">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <h1 className="courses-hero-title">Explore Our Courses</h1>
             <p className="courses-hero-subtitle">
               Discover a wide range of courses designed to boost your career
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -240,7 +236,7 @@ export default function Courses() {
                     <div className="course-footer">
                       <span className="course-price">₹{course.price}</span>
                       <div className="course-actions">
-                        <Link to={`/courses/${course.key}`} className="btn btn-primary">
+                        <Link to={`/courses/${course.key}`} className="btn btn-outline">
                           View Details
                         </Link>
                         <Link to={`/enroll?course=${course.key}`} className="btn btn-primary">
