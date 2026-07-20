@@ -17,7 +17,7 @@ export default function App() {
     <>
       <ScrollToTop />
       <Navbar />
-      <main>
+      <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
