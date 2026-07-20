@@ -42,7 +42,7 @@ const features = [
   {
     icon: FaFileAlt,
     title: 'Interview Preparation',
-    description: 'Comprehensive interview prep with mock interviews, technical rounds, and HR sessions.',
+    description: 'Comprehensive interview prep with mock interviews, problem-solving rounds, and HR sessions.',
   },
   {
     icon: FaChartLine,

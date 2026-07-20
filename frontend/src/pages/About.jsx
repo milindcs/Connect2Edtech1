@@ -26,10 +26,10 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2020', title: 'Founded', description: 'Started with a vision to transform technical education' },
+  { year: '2020', title: 'Founded', description: 'Started with a vision to transform education' },
   { year: '2021', title: 'First 1000 Students', description: 'Reached milestone of 1000 trained professionals' },
   { year: '2022', title: 'Industry Partnerships', description: 'Partnered with 50+ companies for placements' },
-  { year: '2023', title: 'Expanded Programs', description: 'Launched 15+ courses across technical and non-technical domains' },
+  { year: '2023', title: 'Expanded Programs', description: 'Launched 15+ courses across diverse domains' },
   { year: '2024', title: '5000+ Alumni', description: 'Strong community of 5000+ successful professionals placed worldwide' },
   { year: '2025', title: 'Digital Expansion', description: 'Scaled online learning with AI-powered mentorship and live classes' },
   { year: '2026', title: '3 Branches & Growing', description: 'Expanded to Bangalore, Mysore & Hassan branches with 20,000+ learners and 100+ placement partners' },
@@ -67,7 +67,7 @@ export default function About() {
             <h2 className="section-title">Who We Are</h2>
             <p className="about-intro-text">
               Connect2EdTech is a premier EdTech platform dedicated to transforming careers through comprehensive,
-              industry-focused training programs. We specialize in both technical and non-technical skills development,
+              industry-focused training programs. We specialize in skills development,
               preparing students for successful careers in today's competitive job market.
             </p>
             <p className="about-intro-text">

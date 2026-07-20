@@ -169,7 +169,7 @@ export default function Courses() {
 
   const tabs = [
     { id: 'all', label: 'All Courses' },
-    { id: 'nontechnical', label: 'Non Technical' },
+    { id: 'nontechnical', label: 'Non Tech' },
   ];
 
   return (
@@ -184,7 +184,7 @@ export default function Courses() {
           >
             <h1 className="courses-hero-title">Explore Our Courses</h1>
             <p className="courses-hero-subtitle">
-              Discover a wide range of technical and non-technical courses designed to boost your career
+              Discover a wide range of courses designed to boost your career
             </p>
           </motion.div>
         </div>

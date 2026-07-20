@@ -187,7 +187,7 @@ export default function Home() {
               <span className="gradient-text"> Industry-Ready Skills</span>
             </h1>
             <p className="hero-subtitle">
-              Master in-demand technical and non-technical skills with expert-led courses.
+              Master in-demand skills with expert-led courses.
               Get certified, get placed, and accelerate your career growth.
             </p>
             <div className="hero-buttons">

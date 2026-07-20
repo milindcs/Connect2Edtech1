@@ -16,7 +16,7 @@ export default function Footer() {
               Connect2EdTech
             </Link>
             <p className="footer-description">
-              Empowering careers through world-class technical and non-technical training programs.
+              Empowering careers through world-class training programs.
             </p>
           </div>
 
