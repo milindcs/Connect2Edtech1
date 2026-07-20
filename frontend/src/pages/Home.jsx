@@ -240,25 +240,27 @@ export default function Home() {
       {/* Stats Section */}
       <section className="stats-section" ref={statsRef}>
         <div className="section-inner">
-          <div className="stats-grid">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                className="stat-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="stat-icon">
-                  <stat.icon />
-                </div>
-                <div className="stat-value">
-                  <CountUp start={countUpStarted ? 0 : undefined} end={stat.value} duration={2} separator="" suffix={stat.suffix} />
-                </div>
-                <div className="stat-label">{stat.label}</div>
-              </motion.div>
-            ))}
+          <div className="stats-container">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+
+              return (
+                <motion.div
+                  key={stat.label}
+                  className="stat-card"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Icon className="stat-icon" />
+                  <h2 className="stat-number">
+                    <CountUp start={countUpStarted ? 0 : undefined} end={stat.value} duration={2.5} separator="," suffix={stat.suffix} />
+                  </h2>
+                  <p className="stat-label">{stat.label}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -126,20 +126,20 @@
   z-index: 2;
 }
 
-.stats-grid {
+.stats-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
 @media (max-width: 1024px) {
-  .stats-grid {
+  .stats-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 420px) {
-  .stats-grid {
+  .stats-container {
     grid-template-columns: 1fr;
     gap: 12px;
   }
@@ -167,7 +167,7 @@
   font-size: 1.125rem;
 }
 
-.stat-value {
+.stat-number {
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--secondary);
@@ -451,7 +451,7 @@
     font-size: 2.5rem;
   }
 
-  .stats-grid {
+  .stats-container {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -494,7 +494,7 @@
     width: 100%;
   }
 
-  .stats-grid {
+  .stats-container {
     grid-template-columns: 1fr;
     gap: 12px;
   }
