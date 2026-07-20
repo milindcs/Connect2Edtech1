@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
 import { coursesApi } from '../utils/api';
 import './Courses.css';
@@ -120,8 +119,6 @@ const fallbackCourses = [
 
 export default function Courses() {
   const [courses, setCourses] = useState([]);
-  const [filteredCourses, setFilteredCourses] = useState([]);
-  const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -129,51 +126,28 @@ export default function Courses() {
     loadCourses();
   }, []);
 
-  useEffect(() => {
-    filterCourses();
-  }, [courses, activeTab, searchQuery]);
-
   const loadCourses = async () => {
     try {
       const response = await coursesApi.getAll();
       if (response.data?.ok && response.data.data?.all) {
         setCourses(response.data.data.all);
-        setFilteredCourses(response.data.data.all);
+        setLoading(false);
         return;
       }
     } catch (error) {
       console.error('Failed to load courses:', error);
     }
     setCourses(fallbackCourses);
-    setFilteredCourses(fallbackCourses);
     setLoading(false);
   };
 
-  const filterCourses = () => {
-    let filtered = courses;
-
-    if (activeTab === 'technical') {
-      filtered = courses.filter((course) => course.category === 'technical');
-    } else if (activeTab === 'nontechnical') {
-      filtered = courses.filter((course) => course.category === 'nontechnical');
-    }
-
-    if (searchQuery.trim()) {
-      filtered = filtered.filter(
-        (course) =>
-          course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          course.subtitle.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-
-    setFilteredCourses(filtered);
-  };
-
-  const tabs = [
-    { id: 'all', label: 'All Courses' },
-    { id: 'technical', label: 'Technical' },
-    { id: 'nontechnical', label: 'Non Tech' },
-  ];
+  const displayedCourses = courses.filter((course) => {
+    if (!searchQuery.trim()) return true;
+    return (
+      course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      course.subtitle.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  });
 
   return (
     <div className="courses-page">
@@ -208,32 +182,13 @@ export default function Courses() {
             />
           </div>
 
-          {/* Tabs */}
-          <div className="courses-tabs">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                className={`tab-btn ${activeTab === tab.id ? 'tab-active' : ''}`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
           {/* Courses Grid */}
           {loading ? (
             <div className="loading">Loading courses...</div>
-          ) : filteredCourses.length > 0 ? (
+          ) : displayedCourses.length > 0 ? (
             <div className="courses-grid">
-              {filteredCourses.map((course, index) => (
-                <motion.div
-                  key={course.key}
-                  className="course-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                >
+              {displayedCourses.map((course) => (
+                <div key={course.key} className="course-card">
                   <div className="course-badge">{course.category}</div>
                   <div className="course-content">
                     <h3 className="course-title">{course.title}</h3>
@@ -255,7 +210,7 @@ export default function Courses() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           ) : (
