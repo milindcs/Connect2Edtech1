@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { FaUsers, FaBook, FaBriefcase, FaBuilding } from 'react-icons/fa';
 import { coursesApi } from '../utils/api';
 import './Home.css';
@@ -149,12 +149,18 @@ const testimonials = [
 export default function Home() {
   const [courses, setCourses] = useState([]);
   const [counts, setCounts] = useState({});
+  const [started, setStarted] = useState(false);
+  const statsRef = useRef(null);
+  const isInView = useInView(statsRef, { once: true, margin: '-50px' });
 
   useEffect(() => {
     loadCourses();
   }, []);
 
   useEffect(() => {
+    if (!isInView || started) return;
+    setStarted(true);
+
     const targets = {
       'Students Trained': 5000,
       'Courses': 15,
@@ -184,7 +190,7 @@ export default function Home() {
     }, interval);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [isInView, started]);
 
   const loadCourses = async () => {
     try {
@@ -238,7 +244,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="stats-section">
         <div className="container">
-          <div className="stats-grid">
+          <div className="stats-grid" ref={statsRef}>
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
