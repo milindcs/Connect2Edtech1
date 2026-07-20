@@ -35,17 +35,17 @@
 }
 
 .navbar-logo-img {
-  height: 52px;
+  height: 72px;
   width: auto;
-  max-width: 200px;
+  max-width: 260px;
   object-fit: contain;
   background: transparent;
   display: block;
 }
 
 .navbar-scrolled .navbar-logo-img {
-  height: 46px;
-  max-width: 170px;
+  height: 64px;
+  max-width: 220px;
 }
 
 .navbar-menu {
