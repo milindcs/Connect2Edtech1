@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">
-              Connect2EdTech
+              <img src="/logo.PNG" alt="Logo" className="footer-logo-img" />
             </Link>
             <p className="footer-description">
               Empowering careers through world-class training programs.
