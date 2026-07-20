@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaUsers, FaBook, FaBriefcase, FaBuilding } from 'react-icons/fa';
 import { coursesApi } from '../utils/api';
 import './Home.css';
@@ -150,16 +150,19 @@ export default function Home() {
   const [courses, setCourses] = useState([]);
   const [counts, setCounts] = useState({});
   const [started, setStarted] = useState(false);
-  const statsRef = useRef(null);
-  const isInView = useInView(statsRef, { once: true, margin: '-50px' });
 
   useEffect(() => {
     loadCourses();
   }, []);
 
   useEffect(() => {
-    if (!isInView || started) return;
-    setStarted(true);
+    if (started) return;
+    const timer = setTimeout(() => setStarted(true), 300);
+    return () => clearTimeout(timer);
+  }, [started]);
+
+  useEffect(() => {
+    if (!started) return;
 
     const targets = {
       'Students Trained': 5000,
@@ -190,7 +193,7 @@ export default function Home() {
     }, interval);
 
     return () => clearInterval(timer);
-  }, [isInView, started]);
+  }, [started]);
 
   const loadCourses = async () => {
     try {
@@ -244,7 +247,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="stats-section">
         <div className="container">
-          <div className="stats-grid" ref={statsRef}>
+          <div className="stats-grid">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
