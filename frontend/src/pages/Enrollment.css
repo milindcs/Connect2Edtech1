@@ -9,7 +9,7 @@
 
 .enrollment-hero {
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-  padding: 50px 0 30px;
+  padding: 30px 0 20px;
   color: white;
   text-align: center;
 }
@@ -160,14 +160,14 @@
 }
 
 @media (max-width: 420px) {
-  .enrollment-hero { padding: 50px 0 24px; }
+  .enrollment-hero { padding: 30px 0 15px; }
   .enrollment-title { font-size: 1.95rem; }
   .enrollment-subtitle { font-size: 0.95rem; }
 }
 
 @media (max-width: 768px) {
   .enrollment-hero {
-    padding: 60px 0 30px;
+    padding: 40px 0 20px;
   }
 
   .enrollment-title {
