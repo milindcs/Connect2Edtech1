@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-<p>© 2026 Connect2EdTech. All rights reserved.</p>
+          <p>© 2026 Connect2EdTech. All rights reserved.</p>
           <button className="back-to-top" onClick={scrollToTop}>
             <FaArrowUp />
           </button>
