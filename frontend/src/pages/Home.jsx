@@ -148,9 +148,42 @@ const testimonials = [
 
 export default function Home() {
   const [courses, setCourses] = useState([]);
+  const [counts, setCounts] = useState({});
 
   useEffect(() => {
     loadCourses();
+  }, []);
+
+  useEffect(() => {
+    const targets = {
+      'Students Trained': 5000,
+      'Courses': 15,
+      'Placements': 3000,
+      'Industry Partners': 100,
+    };
+
+    const duration = 2000;
+    const steps = 60;
+    const interval = duration / steps;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      const progress = step / steps;
+      setCounts({
+        'Students Trained': Math.floor(5000 * progress),
+        'Courses': Math.floor(15 * progress),
+        'Placements': Math.floor(3000 * progress),
+        'Industry Partners': Math.floor(100 * progress),
+      });
+
+      if (step >= steps) {
+        clearInterval(timer);
+        setCounts(targets);
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
   }, []);
 
   const loadCourses = async () => {
@@ -218,7 +251,9 @@ export default function Home() {
                 <div className="stat-icon">
                   <stat.icon />
                 </div>
-                <div className="stat-value">{stat.value}</div>
+                <div className="stat-value">
+                  {counts[stat.label] !== undefined ? counts[stat.label].toLocaleString() + '+' : '0+'}
+                </div>
                 <div className="stat-label">{stat.label}</div>
               </motion.div>
             ))}
