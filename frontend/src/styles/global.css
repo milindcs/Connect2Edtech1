@@ -134,24 +134,9 @@ select {
 }
 
 @media (max-width: 420px) {
-  .container { padding: 0 14px; }
-  .section { padding: 48px 0; }
-  .section-title { font-size: 1.75rem; }
-  .section-subtitle { font-size: 0.9375rem; }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 48px 0;
-  }
-
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  .section-subtitle {
-    font-size: 0.9375rem;
-  }
+  .section { padding: 40px 0; }
+  .section-title { font-size: 1.5rem; }
+  .section-subtitle { font-size: 0.875rem; }
 }
 
 .btn {
@@ -206,16 +191,24 @@ select {
   font-size: 1.0625rem;
 }
 
-@media (max-width: 768px) {
-  .btn {
-    padding: 9px 18px;
-    font-size: 0.875rem;
-  }
+@media (max-width: 1024px) {
+  .section-title { font-size: 2rem; }
+  .section-subtitle { font-size: 1rem; }
+  .btn-lg { padding: 12px 24px; font-size: 1rem; }
+}
 
-  .btn-lg {
-    padding: 12px 24px;
-    font-size: 0.9375rem;
-  }
+@media (max-width: 768px) {
+  .section { padding: 48px 0; }
+  .section-title { font-size: 1.75rem; }
+  .section-subtitle { font-size: 0.9375rem; }
+  .btn { padding: 9px 18px; font-size: 0.875rem; }
+  .btn-lg { padding: 12px 24px; font-size: 0.9375rem; }
+}
+
+@media (max-width: 420px) {
+  .section { padding: 40px 0; }
+  .section-title { font-size: 1.5rem; }
+  .section-subtitle { font-size: 0.875rem; }
 }
 
 .card {

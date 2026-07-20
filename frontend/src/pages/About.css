@@ -41,6 +41,19 @@
   gap: 20px;
 }
 
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .value-card {
   text-align: center;
   padding: 24px 20px;
