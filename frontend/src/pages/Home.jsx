@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 import { FaUsers, FaBook, FaBriefcase, FaBuilding } from 'react-icons/fa';
 import { coursesApi } from '../utils/api';
 import './Home.css';
@@ -149,8 +150,7 @@ const testimonials = [
 export default function Home() {
   const [courses, setCourses] = useState([]);
   const [homeActiveTab, setHomeActiveTab] = useState('all');
-  const [counts, setCounts] = useState({});
-  const [countsStarted, setCountsStarted] = useState(false);
+  const [countUpStarted, setCountUpStarted] = useState(false);
   const statsRef = useRef(null);
 
   useEffect(() => {
@@ -164,8 +164,8 @@ export default function Home() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !countsStarted) {
-            setCountsStarted(true);
+          if (entry.isIntersecting) {
+            setCountUpStarted(true);
           }
         });
       },
@@ -174,38 +174,7 @@ export default function Home() {
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [countsStarted]);
-
-  useEffect(() => {
-    if (!countsStarted) return;
-
-    const targets = stats.reduce((acc, stat) => {
-      acc[stat.label] = stat.value;
-      return acc;
-    }, {});
-
-    const duration = 2000;
-    const steps = 60;
-    const interval = duration / steps;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-      const nextCounts = stats.reduce((acc, stat) => {
-        acc[stat.label] = Math.floor(stat.value * progress);
-        return acc;
-      }, {});
-      setCounts(nextCounts);
-
-      if (step >= steps) {
-        clearInterval(timer);
-        setCounts(targets);
-      }
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [countsStarted]);
+  }, []);
 
   const loadCourses = async () => {
     try {
@@ -285,7 +254,7 @@ export default function Home() {
                   <stat.icon />
                 </div>
                 <div className="stat-value">
-                  {counts[stat.label] !== undefined ? counts[stat.label].toLocaleString() + stat.suffix : '0' + stat.suffix}
+                  <CountUp start={countUpStarted ? 0 : undefined} end={stat.value} duration={2} separator="" suffix={stat.suffix} />
                 </div>
                 <div className="stat-label">{stat.label}</div>
               </motion.div>
