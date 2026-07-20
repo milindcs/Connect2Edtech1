@@ -23,19 +23,23 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .navbar-logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .navbar-logo-img {
   height: 40px;
   width: auto;
+  max-width: 160px;
   object-fit: contain;
   mix-blend-mode: multiply;
   background: transparent;
+  display: block;
 }
 
 .navbar-scrolled .navbar-logo-img {
@@ -136,10 +140,26 @@
     gap: 24px;
     transition: right 0.3s ease;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
   }
 
   .navbar-menu-open {
     right: 0;
+  }
+
+  .navbar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .navbar-overlay-open {
+    opacity: 1;
+    visibility: visible;
   }
 
   .navbar-link {
@@ -158,5 +178,9 @@
   .navbar-cta {
     width: 100%;
     text-align: center;
+  }
+
+  .navbar-logo-img {
+    max-width: 140px;
   }
 }
