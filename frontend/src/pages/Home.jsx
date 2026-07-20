@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaUsers, FaBook, FaBriefcase, FaBuilding } from 'react-icons/fa';
@@ -150,20 +150,34 @@ export default function Home() {
   const [courses, setCourses] = useState([]);
   const [homeActiveTab, setHomeActiveTab] = useState('all');
   const [counts, setCounts] = useState({});
-  const [started, setStarted] = useState(false);
+  const [countsStarted, setCountsStarted] = useState(false);
+  const statsRef = useRef(null);
 
   useEffect(() => {
     loadCourses();
   }, []);
 
   useEffect(() => {
-    if (started) return;
-    const timer = setTimeout(() => setStarted(true), 300);
-    return () => clearTimeout(timer);
-  }, [started]);
+    const node = statsRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !countsStarted) {
+            setCountsStarted(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [countsStarted]);
 
   useEffect(() => {
-    if (!started) return;
+    if (!countsStarted) return;
 
     const targets = {
       'Students Trained': 5000,
@@ -194,7 +208,7 @@ export default function Home() {
     }, interval);
 
     return () => clearInterval(timer);
-  }, [started]);
+  }, [countsStarted]);
 
   const loadCourses = async () => {
     try {
@@ -258,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="stats-section">
+      <section className="stats-section" ref={statsRef}>
         <div className="section-inner">
           <div className="stats-grid">
             {stats.map((stat, index) => (
