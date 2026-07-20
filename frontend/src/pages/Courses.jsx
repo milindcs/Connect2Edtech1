@@ -152,7 +152,9 @@ export default function Courses() {
   const filterCourses = () => {
     let filtered = courses;
 
-    if (activeTab === 'nontechnical') {
+    if (activeTab === 'technical') {
+      filtered = courses.filter((course) => course.category === 'technical');
+    } else if (activeTab === 'nontechnical') {
       filtered = courses.filter((course) => course.category === 'nontechnical');
     }
 
@@ -169,6 +171,7 @@ export default function Courses() {
 
   const tabs = [
     { id: 'all', label: 'All Courses' },
+    { id: 'technical', label: 'Technical' },
     { id: 'nontechnical', label: 'Non Tech' },
   ];
 
