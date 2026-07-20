@@ -119,6 +119,8 @@ const fallbackCourses = [
 
 export default function Courses() {
   const [courses, setCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([]);
+  const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
 
@@ -126,11 +128,16 @@ export default function Courses() {
     loadCourses();
   }, []);
 
+  useEffect(() => {
+    filterCourses();
+  }, [courses, activeTab, searchQuery]);
+
   const loadCourses = async () => {
     try {
       const response = await coursesApi.getAll();
       if (response.data?.ok && response.data.data?.all) {
         setCourses(response.data.data.all);
+        setFilteredCourses(response.data.data.all);
         setLoading(false);
         return;
       }
@@ -138,16 +145,35 @@ export default function Courses() {
       console.error('Failed to load courses:', error);
     }
     setCourses(fallbackCourses);
+    setFilteredCourses(fallbackCourses);
     setLoading(false);
   };
 
-  const displayedCourses = courses.filter((course) => {
-    if (!searchQuery.trim()) return true;
-    return (
-      course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      course.subtitle.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  });
+  const filterCourses = () => {
+    let filtered = courses;
+
+    if (activeTab === 'technical') {
+      filtered = courses.filter((course) => course.category === 'technical');
+    } else if (activeTab === 'nontechnical') {
+      filtered = courses.filter((course) => course.category === 'nontechnical');
+    }
+
+    if (searchQuery.trim()) {
+      filtered = filtered.filter(
+        (course) =>
+          course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          course.subtitle.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    setFilteredCourses(filtered);
+  };
+
+  const tabs = [
+    { id: 'all', label: 'All Courses' },
+    { id: 'technical', label: 'Technical' },
+    { id: 'nontechnical', label: 'Non Tech' },
+  ];
 
   return (
     <div className="courses-page">
@@ -182,12 +208,25 @@ export default function Courses() {
             />
           </div>
 
+          {/* Tabs */}
+          <div className="courses-tabs">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`tab-btn ${activeTab === tab.id ? 'tab-active' : ''}`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
           {/* Courses Grid */}
           {loading ? (
             <div className="loading">Loading courses...</div>
-          ) : displayedCourses.length > 0 ? (
+          ) : filteredCourses.length > 0 ? (
             <div className="courses-grid">
-              {displayedCourses.map((course) => (
+              {filteredCourses.map((course) => (
                 <div key={course.key} className="course-card">
                   <div className="course-badge">{course.category}</div>
                   <div className="course-content">
