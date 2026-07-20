@@ -28,10 +28,20 @@ export default function Navbar() {
     setIsOpen(false);
   }, [location]);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
-
         <Link to="/" className="navbar-logo">
           <img src="/logo.PNG" alt="Logo" className="navbar-logo-img" />
         </Link>
@@ -51,7 +61,10 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {isOpen && <div className="navbar-overlay navbar-overlay-open" onClick={() => setIsOpen(false)} />}
+        <div
+          className={`navbar-overlay ${isOpen ? 'navbar-overlay-open' : ''}`}
+          onClick={() => setIsOpen(false)}
+        />
 
         <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
