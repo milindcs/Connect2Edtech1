@@ -271,7 +271,7 @@
 
 .related-section {
   background: #fce7f3;
-  padding: 40px 0;
+  padding: 24px 0;
 }
 
 .related-grid {
@@ -329,7 +329,7 @@
 .loading,
 .not-found {
   text-align: center;
-  padding: 80px 20px;
+  padding: 40px 20px;
   min-height: 100vh;
 }
 

@@ -22,7 +22,7 @@
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 24px;
 }
 
 .about-intro-text {
@@ -34,7 +34,7 @@
 
 .values-section {
   background: #fce7f3;
-  padding: 40px 0;
+  padding: 24px 0;
 }
 
 .values-grid {
@@ -98,7 +98,7 @@
 
 .journey-section {
   background: #fce7f3;
-  padding: 40px 0;
+  padding: 24px 0;
 }
 
 .timeline {
@@ -165,7 +165,7 @@
 
 .industries-section {
   background: #fce7f3;
-  padding: 40px 0;
+  padding: 24px 0;
 }
 
 .industries-grid {

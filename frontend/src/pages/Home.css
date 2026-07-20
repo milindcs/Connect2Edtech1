@@ -66,7 +66,7 @@
   position: relative;
   z-index: 1;
   max-width: 800px;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .hero-title {
@@ -301,7 +301,7 @@
 /* Why Choose Us */
 .why-choose-us {
   background: #fce7f3;
-  padding: 40px 0;
+  padding: 24px 0;
 }
 
 .why-choose-grid {
@@ -422,7 +422,7 @@
 
 /* CTA Section */
 .cta-section {
-  padding: 40px 0;
+  padding: 24px 0;
   background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
   color: white;
 }
