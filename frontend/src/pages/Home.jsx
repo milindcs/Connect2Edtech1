@@ -148,6 +148,7 @@ const testimonials = [
 
 export default function Home() {
   const [courses, setCourses] = useState([]);
+  const [homeActiveTab, setHomeActiveTab] = useState('all');
   const [counts, setCounts] = useState({});
   const [started, setStarted] = useState(false);
 
@@ -207,6 +208,18 @@ export default function Home() {
     }
     setCourses(fallbackCourses);
   };
+
+  const homeFilteredCourses = courses.filter((course) => {
+    if (homeActiveTab === 'technical') return course.category === 'technical';
+    if (homeActiveTab === 'nontechnical') return course.category === 'nontechnical';
+    return true;
+  });
+
+  const homeTabs = [
+    { id: 'all', label: 'All Courses' },
+    { id: 'technical', label: 'Technical' },
+    { id: 'nontechnical', label: 'Non Tech' },
+  ];
 
   return (
     <div className="home">
@@ -279,16 +292,20 @@ export default function Home() {
               Explore our most enrolled courses and start your learning journey today
             </p>
           </div>
-          <div className="courses-grid">
-            {courses.slice(0, 6).map((course, index) => (
-              <motion.div
-                key={course.key}
-                className="course-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+          <div className="courses-tabs">
+            {homeTabs.map((tab) => (
+              <button
+                key={tab.id}
+                className={`tab-btn ${homeActiveTab === tab.id ? 'tab-active' : ''}`}
+                onClick={() => setHomeActiveTab(tab.id)}
               >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+          <div className="courses-grid">
+            {homeFilteredCourses.slice(0, 6).map((course) => (
+              <div key={course.key} className="course-card">
                 <div className="course-badge">{course.category}</div>
                 <div className="course-content">
                   <h3 className="course-title">{course.title}</h3>
@@ -300,12 +317,17 @@ export default function Home() {
                   </div>
                   <div className="course-footer">
                     <span className="course-price">₹{course.price}</span>
-                    <Link to={`/courses/${course.key}`} className="btn btn-primary">
-                      View Details
-                    </Link>
+                    <div className="course-actions">
+                      <Link to={`/courses/${course.key}`} className="btn btn-primary">
+                        View Details
+                      </Link>
+                      <Link to={`/enroll?course=${course.key}`} className="btn btn-primary">
+                        Enroll
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
           <div className="text-center">
