@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaUsers, FaBook, FaBriefcase, FaBuilding } from 'react-icons/fa';
 import { coursesApi } from '../utils/api';
 import './Home.css';
@@ -148,49 +148,10 @@ const testimonials = [
 
 export default function Home() {
   const [courses, setCourses] = useState([]);
-  const [counts, setCounts] = useState({});
-  const [started, setStarted] = useState(false);
-  const statsRef = useRef(null);
-  const isInView = useInView(statsRef, { once: true, margin: '-50px' });
 
   useEffect(() => {
     loadCourses();
   }, []);
-
-  useEffect(() => {
-    if (!isInView || started) return;
-    setStarted(true);
-
-    const targets = {
-      'Students Trained': 5000,
-      'Courses': 15,
-      'Placements': 3000,
-      'Industry Partners': 100,
-    };
-
-    const duration = 2000;
-    const steps = 60;
-    const interval = duration / steps;
-    let step = 0;
-
-    const timer = setInterval(() => {
-      step++;
-      const progress = step / steps;
-      setCounts({
-        'Students Trained': Math.floor(5000 * progress),
-        'Courses': Math.floor(15 * progress),
-        'Placements': Math.floor(3000 * progress),
-        'Industry Partners': Math.floor(100 * progress),
-      });
-
-      if (step >= steps) {
-        clearInterval(timer);
-        setCounts(targets);
-      }
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [isInView, started]);
 
   const loadCourses = async () => {
     try {
@@ -244,7 +205,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="stats-section">
         <div className="container">
-          <div className="stats-grid" ref={statsRef}>
+          <div className="stats-grid">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -257,9 +218,7 @@ export default function Home() {
                 <div className="stat-icon">
                   <stat.icon />
                 </div>
-                <div className="stat-value">
-                  {counts[stat.label] !== undefined ? counts[stat.label].toLocaleString() + '+' : '0+'}
-                </div>
+                <div className="stat-value">{stat.value}</div>
                 <div className="stat-label">{stat.label}</div>
               </motion.div>
             ))}
