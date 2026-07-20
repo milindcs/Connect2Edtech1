@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 10px;
   overflow: hidden;
 }
 
@@ -53,7 +53,7 @@
 .navbar-menu {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 24px;
 }
 
 .navbar-link {
@@ -128,7 +128,7 @@
 
 @media (max-width: 1024px) {
   .navbar-menu {
-    gap: 24px;
+    gap: 16px;
   }
 
   .navbar-link {
