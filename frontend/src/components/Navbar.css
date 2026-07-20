@@ -39,7 +39,6 @@
   width: auto;
   max-width: 200px;
   object-fit: contain;
-  mix-blend-mode: multiply;
   background: transparent;
   display: block;
 }
@@ -47,7 +46,6 @@
 .navbar-scrolled .navbar-logo-img {
   height: 46px;
   max-width: 170px;
-  mix-blend-mode: normal;
 }
 
 .navbar-menu {
