@@ -5,13 +5,13 @@
   right: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  background: transparent;
+  background: #db2777;
   padding: 16px 0;
 }
 
 .navbar-scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: #db2777;
+  backdrop-filter: none;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   padding: 12px 0;
 }
@@ -59,7 +59,7 @@
 .navbar-link {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   transition: color 0.2s ease;
   position: relative;
 }
@@ -71,7 +71,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--primary);
+  background: #ffffff;
   transform: scaleX(0);
   transition: transform 0.2s ease;
 }
@@ -82,26 +82,26 @@
 }
 
 .navbar-link:hover {
-  color: white;
+  color: #ffffff;
 }
 
 .navbar-link-active {
-  color: white;
+  color: #ffffff;
 }
 
 .navbar-scrolled .navbar-link {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .navbar-scrolled .navbar-link:hover,
 .navbar-scrolled .navbar-link-active {
-  color: var(--primary);
+  color: #ffffff;
 }
 
 .navbar-cta {
   padding: 10px 24px;
-  background: var(--primary);
-  color: white;
+  background: #ffffff;
+  color: #db2777;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.9375rem;
@@ -109,9 +109,9 @@
 }
 
 .navbar-cta:hover {
-  background: var(--primary-dark);
+  background: #fce7f3;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-toggle {
@@ -123,7 +123,7 @@
 }
 
 .navbar-scrolled .navbar-toggle {
-  color: var(--text);
+  color: white;
 }
 
 @media (max-width: 1024px) {
