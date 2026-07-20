@@ -3,7 +3,6 @@ import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
 import { enrollmentApi, coursesApi } from '../utils/api';
-import { buildWhatsAppUrl } from '../components/WhatsAppFloat';
 import './Enrollment.css';
 
 const fallbackCourses = [
@@ -179,34 +178,6 @@ export default function Enrollment() {
         submitted: false,
         error: 'Something went wrong. Please try again later.',
       });
-    }
-
-    try {
-      const messageLines = [
-        `Name: ${formData.fullName}`,
-        `Email: ${formData.email}`,
-        `Phone: ${formData.phone}`,
-        formData.college ? `College: ${formData.college}` : '',
-        formData.qualification ? `Qualification: ${formData.qualification}` : '',
-        formData.courseSelected ? `Course: ${formData.courseSelected}` : '',
-        formData.city ? `City: ${formData.city}` : '',
-        formData.state ? `State: ${formData.state}` : '',
-        formData.message ? `Message: ${formData.message}` : '',
-      ].filter(Boolean).join('\n');
-
-      const waUrl = buildWhatsAppUrl({
-        phone: '7019436720',
-        text: `New Enrollment:\n\n${messageLines}`,
-      });
-      const link = document.createElement('a');
-      link.href = waUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (err) {
-      console.error('Failed to open WhatsApp:', err);
     }
 
     if (apiOk) {
