@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
     <div className="why-choose-us">
       {/* Hero Section */}
       <section className="why-hero">
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
 
       {/* Features Grid */}
       <section className="section">
-        <div className="container">
+        <div className="section-inner">
           <div className="features-grid">
             {features.map((feature, index) => (
               <motion.div
@@ -107,7 +107,7 @@ export default function WhyChooseUs() {
 
       {/* CTA Section */}
       <section className="cta-section">
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             className="cta-card"
             initial={{ opacity: 0, y: 20 }}

@@ -75,7 +75,7 @@ export default function Contact() {
   return (
     <div className="contact-page">
       <section className="contact-hero">
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function Contact() {
 
       <div className="contact-page-content">
         <section className="section">
-          <div className="container">
+          <div className="section-inner">
           <div className="contact-grid">
             <div className="contact-info">
               {contactInfo.map((item, index) => (

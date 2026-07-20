@@ -40,7 +40,7 @@ export default function About() {
     <div className="about">
       {/* Hero Section */}
       <section className="about-hero">
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export default function About() {
 
       {/* Introduction */}
       <section className="section">
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             className="about-intro"
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function About() {
 
       {/* Mission, Vision, Values */}
       <section className="section values-section">
-        <div className="container">
+        <div className="section-inner">
           <div className="values-grid">
             {values.map((value, index) => (
               <motion.div
@@ -105,7 +105,7 @@ export default function About() {
 
       {/* Journey Timeline */}
       <section className="section journey-section">
-        <div className="container">
+        <div className="section-inner">
           <div className="section-header">
             <h2 className="section-title">Our Journey</h2>
             <p className="section-subtitle">
@@ -135,7 +135,7 @@ export default function About() {
 
       {/* Industries We Serve */}
       <section className="section industries-section">
-        <div className="container">
+        <div className="section-inner">
           <div className="section-header">
             <h2 className="section-title">Industries We Serve</h2>
             <p className="section-subtitle">

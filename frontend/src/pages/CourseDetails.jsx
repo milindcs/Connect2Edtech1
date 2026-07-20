@@ -299,7 +299,7 @@ export default function CourseDetails() {
       {/* Hero Banner */}
       <section className="course-hero">
         <div className="hero-overlay"></div>
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             className="course-hero-content"
             initial={{ opacity: 0, y: 30 }}
@@ -333,7 +333,7 @@ export default function CourseDetails() {
 
       {/* Course Content */}
       <section className="section">
-        <div className="container">
+        <div className="section-inner">
           <div className="course-layout">
             {/* Main Content */}
             <div className="course-main">
@@ -445,7 +445,7 @@ export default function CourseDetails() {
       {/* Related Courses */}
       {relatedCourses.length > 0 && (
         <section className="section related-section">
-          <div className="container">
+          <div className="section-inner">
             <h2 className="section-title">Related Courses</h2>
             <div className="related-grid">
               {relatedCourses.map((related, index) => (

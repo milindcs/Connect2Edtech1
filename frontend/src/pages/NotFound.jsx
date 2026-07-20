@@ -6,7 +6,7 @@ import './NotFound.css';
 export default function NotFound() {
   return (
     <div className="not-found-page">
-      <div className="container">
+      <div className="section-inner">
         <motion.div
           className="not-found-content"
           initial={{ opacity: 0, y: 30 }}

@@ -230,7 +230,7 @@ export default function Enrollment() {
   return (
     <div className="enrollment-page">
       <section className="enrollment-hero">
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -246,7 +246,7 @@ export default function Enrollment() {
 
       <div className="enrollment-page-content">
         <section className="section">
-          <div className="container">
+          <div className="section-inner">
             <div className="enrollment-grid">
               <motion.div
                 className="enrollment-form-card"

@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="section-inner">
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="footer-logo">

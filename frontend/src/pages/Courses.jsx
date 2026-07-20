@@ -179,7 +179,7 @@ export default function Courses() {
     <div className="courses-page">
       {/* Hero */}
       <section className="courses-hero">
-        <div className="container">
+        <div className="section-inner">
           <div>
             <h1 className="courses-hero-title">Explore Our Courses</h1>
             <p className="courses-hero-subtitle">
@@ -191,7 +191,7 @@ export default function Courses() {
 
       {/* Courses Section */}
       <section className="section">
-        <div className="container">
+        <div className="section-inner">
           {/* Search Bar */}
           <div className="courses-search">
             <FaSearch className="search-icon" />

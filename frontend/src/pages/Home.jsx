@@ -230,7 +230,7 @@ export default function Home() {
           <div className="hero-shape hero-shape-2"></div>
           <div className="hero-shape hero-shape-3"></div>
         </div>
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             className="hero-content"
             initial={{ opacity: 0, y: 30 }}
@@ -259,7 +259,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="stats-section">
-        <div className="container">
+        <div className="section-inner">
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <motion.div
@@ -285,7 +285,7 @@ export default function Home() {
 
       {/* Featured Courses */}
       <section className="section featured-courses">
-        <div className="container">
+        <div className="section-inner">
           <div className="section-header">
             <h2 className="section-title">Popular Courses</h2>
             <p className="section-subtitle">
@@ -340,7 +340,7 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <section className="section why-choose-us">
-        <div className="container">
+        <div className="section-inner">
           <div className="section-header">
             <h2 className="section-title">Why Choose Us</h2>
             <p className="section-subtitle">
@@ -370,7 +370,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="section testimonials">
-        <div className="container">
+        <div className="section-inner">
           <div className="section-header">
             <h2 className="section-title">Student Success Stories</h2>
             <p className="section-subtitle">
@@ -405,7 +405,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="cta-section">
-        <div className="container">
+        <div className="section-inner">
           <motion.div
             className="cta-card"
             initial={{ opacity: 0, y: 20 }}
