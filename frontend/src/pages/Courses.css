@@ -90,7 +90,7 @@
 
 .courses-page-content {
   background: #fce7f3;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .course-card {
@@ -121,7 +121,7 @@
 }
 
 .course-content {
-  padding: 24px;
+  padding: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -191,14 +191,14 @@
 
 .loading {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
   font-size: 1.125rem;
   color: var(--text-secondary);
 }
 
 .no-courses {
   text-align: center;
-  padding: 80px 20px;
+  padding: 60px 20px;
   background: var(--surface);
   border-radius: var(--radius-lg);
   border: 2px dashed var(--border);
