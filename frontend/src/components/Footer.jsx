@@ -29,6 +29,12 @@ export default function Footer() {
             <Link to="/enroll">Enroll</Link>
           </div>
 
+          <div className="footer-courses">
+            <h4>Courses</h4>
+            <Link to="/courses?category=technical">Technical</Link>
+            <Link to="/courses?category=nontechnical">Non Technical</Link>
+            <Link to="/courses">All Courses</Link>
+          </div>
 
           <div className="footer-social">
             <h4>Connect With Us</h4>

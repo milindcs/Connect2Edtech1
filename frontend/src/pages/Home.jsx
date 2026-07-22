@@ -183,30 +183,30 @@ export default function Home() {
           <div className="hero-shape hero-shape-3"></div>
         </div>
         <div className="section-inner">
-          <motion.div
-            className="hero-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="hero-title">
-              Transform Your Career with
-              <span className="gradient-text"> Industry-Ready Skills</span>
-            </h1>
-            <p className="hero-subtitle">
-              Master in-demand skills with expert-led courses.
-              Get certified, get placed, and accelerate your career growth.
-            </p>
-            <div className="hero-buttons">
-              <Link to="/courses" className="btn btn-primary btn-lg">
-                Explore Courses
-              </Link>
-              <Link to="/contact" className="btn btn-outline btn-lg">
-                Contact Us
-              </Link>
-            </div>
-          </motion.div>
-        </div>
+            <motion.div
+              className="hero-content"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="hero-title">
+                Transform Your Career with
+                <span className="gradient-text"> Industry-Ready Skills</span>
+              </h1>
+              <p className="hero-subtitle">
+                Master in-demand skills with expert-led courses.
+                Get certified, get placed, and accelerate your career growth.
+              </p>
+              <div className="hero-buttons">
+                <Link to="/courses" className="btn btn-primary btn-lg">
+                  Explore Courses
+                </Link>
+                <Link to="/contact" className="btn btn-outline btn-lg">
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </div>
       </section>
 
       {/* Stats Section */}
