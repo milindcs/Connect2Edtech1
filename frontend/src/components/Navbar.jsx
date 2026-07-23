@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, memo } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 
@@ -11,14 +11,14 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
-export default function Navbar() {
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -42,9 +42,9 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <NavLink to="/" className="navbar-logo" end>
           <img src="/logo.PNG" alt="Logo" className="navbar-logo-img" />
-        </Link>
+        </NavLink>
 
         <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -53,17 +53,17 @@ export default function Navbar() {
 
       <div className={`navbar-menu ${isOpen ? 'navbar-menu-open' : ''}`}>
         {navLinks.map((link) => (
-          <Link
+          <NavLink
             key={link.path}
             to={link.path}
-            className={`navbar-link ${location.pathname === link.path ? 'navbar-link-active' : ''}`}
+            className={({ isActive }) => `navbar-link ${isActive ? 'navbar-link-active' : ''}`}
           >
             {link.name}
-          </Link>
+          </NavLink>
         ))}
-        <Link to="/enroll" className="navbar-cta">
+        <NavLink to="/enroll" className="navbar-cta">
           Enroll Now
-        </Link>
+        </NavLink>
       </div>
 
       <div
@@ -73,3 +73,5 @@ export default function Navbar() {
     </nav>
   );
 }
+
+export default memo(Navbar);
