@@ -46,30 +46,30 @@ export default function Navbar() {
           <img src="/logo.PNG" alt="Logo" className="navbar-logo-img" />
         </Link>
 
-        <div className={`navbar-menu ${isOpen ? 'navbar-menu-open' : ''}`}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`navbar-link ${location.pathname === link.path ? 'navbar-link-active' : ''}`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Link to="/enroll" className="navbar-cta">
-            Enroll Now
-          </Link>
-        </div>
-
-        <div
-          className={`navbar-overlay ${isOpen ? 'navbar-overlay-open' : ''}`}
-          onClick={() => setIsOpen(false)}
-        />
-
         <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
+
+      <div className={`navbar-menu ${isOpen ? 'navbar-menu-open' : ''}`}>
+        {navLinks.map((link) => (
+          <Link
+            key={link.path}
+            to={link.path}
+            className={`navbar-link ${location.pathname === link.path ? 'navbar-link-active' : ''}`}
+          >
+            {link.name}
+          </Link>
+        ))}
+        <Link to="/enroll" className="navbar-cta">
+          Enroll Now
+        </Link>
+      </div>
+
+      <div
+        className={`navbar-overlay ${isOpen ? 'navbar-overlay-open' : ''}`}
+        onClick={() => setIsOpen(false)}
+      />
     </nav>
   );
 }

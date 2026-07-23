@@ -23,7 +23,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  overflow: hidden;
 }
 
 .navbar-logo {
@@ -51,6 +50,10 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .navbar-link {
@@ -98,6 +101,8 @@
   color: white;
   background: none;
   padding: 8px;
+  position: relative;
+  z-index: 1004;
 }
 
 .navbar-scrolled .navbar-toggle {
@@ -107,6 +112,7 @@
 @media (max-width: 1024px) {
   .navbar-menu {
     gap: 16px;
+    right: 16px;
   }
 
   .navbar-link {
@@ -136,6 +142,7 @@
     gap: 24px;
     transition: right 0.3s ease;
     z-index: 1003;
+    transform: none;
   }
 
   .navbar-menu-open {
@@ -149,12 +156,14 @@
     z-index: 1002;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   .navbar-overlay-open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .navbar-link {
