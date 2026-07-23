@@ -169,6 +169,21 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Leadership */}
+      <section className="section leadership-section">
+        <div className="section-inner">
+          <div className="section-header">
+            <h2 className="section-title">Our Leadership</h2>
+            <p className="section-subtitle">
+              Meet the team behind our success
+            </p>
+          </div>
+          <div className="leadership-image-wrapper">
+            <img src="/images/leadership/leadership.jpeg" alt="Leadership" className="leadership-image" />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -192,6 +192,24 @@
   transform: translateY(-2px);
 }
 
+.leadership-section {
+  background: #fce7f3;
+  padding: 24px 0;
+}
+
+.leadership-image-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.leadership-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: block;
+}
+
 @media (max-width: 1024px) {
   .values-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -228,5 +246,9 @@
 
   .industries-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .leadership-image {
+    border-radius: var(--radius);
   }
 }
