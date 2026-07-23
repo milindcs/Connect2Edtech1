@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
   background: #eaaec9;
   padding: 20px 0;
 }
@@ -40,11 +40,6 @@
   object-fit: contain;
   background: transparent;
   display: block;
-}
-
-.navbar-scrolled .navbar-logo-img {
-  height: 64px;
-  max-width: 220px;
 }
 
 .navbar-menu {
