@@ -34,6 +34,9 @@ services:
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://connect2edtech-api.onrender.com/api
     routes:
       - type: rewrite
         source: /*
